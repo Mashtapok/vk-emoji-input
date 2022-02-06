@@ -1,0 +1,73 @@
+.emoji-box {
+    position: absolute;
+    width: 289px;
+    bottom: calc(100% + 10px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all .2s;
+    border: 1px solid var(--emoji-box-border);
+}
+
+.emoji-box__tabs {
+    display: flex;
+    height: 36px;
+    overflow: hidden;
+    background: var(--emoji-box-bg);
+    border-radius: 0 0 4px 4px;
+}
+
+.emoji-box__tab {
+    width: 36px;
+    height: 36px;
+    color: #99A2AD;
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+
+.emoji-box__tab--active {
+    background-color: #FFF;
+}
+
+.emoji-box__tab:first-child {
+    border-radius: 0 0 0 4px;
+}
+
+.emoji-box-enter {
+    opacity: 0;
+    transform: translateY(10px);
+}
+.emoji-box-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.emoji-box-exit {
+    opacity: 1;
+}
+.emoji-box-exit-active {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.ui-scroll {
+
+}
+
+
+/* Стрелка */
+.emoji-box::before, .emoji-box::after {
+    position: absolute;
+    content: '';
+    top: 100%;
+    right: 13px;
+    border: solid transparent;
+}
+.emoji-box::before {
+    border-width: 5px;
+    border-top-color: var(--emoji-box-border);
+    transform: translate3d(0, 0.1px, 0);
+}
+.emoji-box::after {
+    border-width: 5px;
+    border-top-color: var(--emoji-box-bg);
+    transform: translate3d(0, -1px, 0);
+}

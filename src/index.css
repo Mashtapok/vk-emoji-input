@@ -1,0 +1,75 @@
+@font-face {
+    font-family: Roboto VK;
+    font-weight: 400;
+    font-display: block;
+    src: url('assets/Roboto-VK-400.woff2');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+:root {
+    --border-gray: #c5d0db;
+    --placeholder-gray: #828282;
+    --emoji-btn: #b9bdc5;
+    --emoji-box-bg: #ebeef2;
+    --emoji-box-border: #C5D0DB;
+}
+
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto VK', sans-serif;
+}
+
+.App {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    width: 290px;
+    transform: translate(50%, -50%);
+}
+
+.input {
+    display: flex;
+    background: #FFF;
+    border: 1px solid var(--border-gray);
+    border-radius: 4px;
+    line-height: 18px;
+    overflow-y: hidden;
+}
+
+.input__field {
+    min-height: 36px;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-x: hidden;
+    padding: 9px 0 9px 9px;
+    max-height: 180px;
+}
+
+.input__icon {
+    height: 20px;
+    padding: 8px;
+    color: var(--emoji-btn);
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity .2s;
+}
+
+.input__icon:active {
+    transform: translateY(1px);
+}
+
+.input__icon:hover {
+    opacity: 1;
+}
+
+.input__field:empty::before {
+    content: attr(placeholder);
+    color: var(--placeholder-gray);
+    cursor: text;
+}
