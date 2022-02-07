@@ -1,7 +1,18 @@
-# Тестовое задание на стажировку VK
+# Emoji Picker VK
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Тестовое задание на стажировку VK
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+### Стэк:
+
+- React Js
+- TypeScript
+
+
+### Реализовано:
+
+- Добавление emoji из пикера в текст
+- Сохранение последних `N` использованных эмоджи, ранжирование их по частоте использования
+
