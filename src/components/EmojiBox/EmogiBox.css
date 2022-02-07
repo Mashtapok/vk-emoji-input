@@ -4,6 +4,7 @@
     bottom: calc(100% + 10px);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     transition: all .2s;
+    border-radius: 4px;
     border: 1px solid var(--emoji-box-border);
 }
 
@@ -36,22 +37,31 @@
     opacity: 0;
     transform: translateY(10px);
 }
+
 .emoji-box-enter-active {
     opacity: 1;
     transform: translateY(0);
 }
+
 .emoji-box-exit {
     opacity: 1;
 }
+
 .emoji-box-exit-active {
     opacity: 0;
     transform: translateY(10px);
 }
 
 .ui-scroll {
-
+    height: 245px;
 }
 
+.ui-scroll__viewport {
+    height: 100%;
+    overflow: auto;
+    padding: 0 0 10px 6px;
+    margin-right: 5px;
+}
 
 /* Стрелка */
 .emoji-box::before, .emoji-box::after {
@@ -59,15 +69,31 @@
     content: '';
     top: 100%;
     right: 13px;
-    border: solid transparent;
+    border: 5px solid transparent;
 }
+
 .emoji-box::before {
-    border-width: 5px;
     border-top-color: var(--emoji-box-border);
     transform: translate3d(0, 0.1px, 0);
 }
+
 .emoji-box::after {
-    border-width: 5px;
     border-top-color: var(--emoji-box-bg);
     transform: translate3d(0, -1px, 0);
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 25%;
+    background-color: #dae2ea;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+    margin: 3px 0;
 }
