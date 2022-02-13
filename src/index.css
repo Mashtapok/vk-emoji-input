@@ -26,7 +26,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Roboto VK', sans-serif;
 }
 
-.App {
+.app {
     position: absolute;
     top: 50%;
     right: 50%;
@@ -59,30 +59,23 @@ textarea.input__field {
     width: 457px;
     padding: 9px;
     border-radius: 4px;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 13px;
-    line-height: 18px;
-    color: #000000;
     overflow-y: hidden;
     overflow-x: hidden;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     border: none;
     outline: none;
     resize: none;
     word-wrap: break-word;
-    box-sizing: border-box;
 }
 
 .input__field::-webkit-input-placeholder {
     color: var(--placeholder-gray);
+    font-size: 14px;
     cursor: text;
 }
 
 .input__icon {
-    height: 20px;
+    height: 36px;
     padding: 8px;
     color: var(--emoji-btn);
     cursor: pointer;

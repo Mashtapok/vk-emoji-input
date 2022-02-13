@@ -23,9 +23,9 @@ export const EmojiBoxContent: React.FC<EmojiBoxContentProps> = ({ sections, addE
       {sections.length && sections.map(section => <div className="emoji-section" key={section.title}>
         <div className="emoji-section__title">{section.title}</div>
         <div className="emoji-section__items">
-          {section?.items?.length && section.items.map((emoji, index) => <div className="emoji-section__item"
-                                                                              onClick={(e) => onAddEmoji(e, emoji)}
-                                                                              key={index}>{emoji}</div>)}
+          {section?.items?.length ? section.items.map((emoji, index) => <div className="emoji-section__item"
+                                                                             onClick={(e) => onAddEmoji(e, emoji)}
+                                                                             key={index}>{emoji}</div>) : ''}
         </div>
       </div>)}
     </>

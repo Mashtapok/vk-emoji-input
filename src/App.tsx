@@ -1,12 +1,28 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { EmojiButton } from './components/EmogiButton/EmojiButton';
 import { EmojiBox } from './components/EmojiBox/EmojiBox';
 import { CSSTransition } from 'react-transition-group';
+import { log } from 'util';
 
 export const App = () => {
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
   const [text, setText] = useState<string>('');
   const [isEmojiBoxOpened, setEmojiBoxOpened] = useState<boolean>(false);
+
+  useEffect(() => {
+    document.addEventListener('keydown', onTabKeyPress);
+
+    return () => {
+      document.removeEventListener('keydown', onTabKeyPress);
+    };
+  }, []);
+
+  const onTabKeyPress = (event: KeyboardEvent) => {
+    if (event.code === "Tab") {
+      setEmojiBoxOpened(true);
+    }
+  };
+
 
   const handleChange = (event: any) => {
     setText(event.target.value);
@@ -28,9 +44,10 @@ export const App = () => {
   };
 
   return (
-    <div className="App">
+    <div className="app">
       <div className="input">
         <textarea
+          tabIndex={-1}
           ref={textAreaRef}
           className="input__field"
           rows={1}
@@ -41,7 +58,6 @@ export const App = () => {
           // contentEditable="true"
           // suppressContentEditableWarning={true}
           onChange={handleChange}
-          tabIndex={0}
           value={text}
         >
         </textarea>

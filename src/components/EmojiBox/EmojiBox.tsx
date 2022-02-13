@@ -56,9 +56,6 @@ export const EmojiBox = ({onSelectEmoji} : any) => {
           <div className="ui-scroll__viewport">
             <EmojiBoxContent sections={tabContent[activeTab]} addEmoji={addEmoji} onSelectEmoji={onSelectEmoji} />
           </div>
-          <div className="ui-scroll__container">
-            <div className="ui-scroll__scrollbar" />
-          </div>
         </div>
         <div className="emoji-box__tabs">
           {tabs.map(tab => (
