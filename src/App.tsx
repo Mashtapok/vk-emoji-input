@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { EmojiButton } from './components/EmogiButton/EmojiButton';
 import { EmojiBox } from './components/EmojiBox/EmojiBox';
 import { CSSTransition } from 'react-transition-group';
-import { log } from 'util';
 
 export const App = () => {
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
@@ -40,7 +39,6 @@ export const App = () => {
     const newText = `${before}${native}${after}`;
 
     setText(newText);
-    // setTextAreaCursor(before.length + native.length);
   };
 
   return (
@@ -53,10 +51,6 @@ export const App = () => {
           rows={1}
           wrap="hard"
           placeholder="Ваше сообщение"
-          // role="textbox"
-          // aria-multiline="true"
-          // contentEditable="true"
-          // suppressContentEditableWarning={true}
           onChange={handleChange}
           value={text}
         >
